@@ -1,0 +1,5 @@
+echo "Number of devices: 4"
+echo "1 switch1 ON"
+echo "2 switch2 ON"
+echo "3 switch3 OFF"
+echo "4 switch4 OFF"
