@@ -13,15 +13,17 @@ Follow [AronKornhall](http://twitter.com/AronKornhall) for news and updates rega
 
     var td = tellstick();
 
+    // list all registered devices
     td.list(function(err, list){
-      // output all registered devices
       console.log(list);
     });
 
+    // turning on a device
     td.turnOn('1', function(err){
       if(!err) console.log('Switch 1 is turned on');
     });
 
+    // turning off a device
     td.turnOff('1', function(err){
       if(!err) console.log('Switch 1 is turned off');
     });
