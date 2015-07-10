@@ -1,4 +1,7 @@
 #Tellstick
+
+[![Build Status](https://travis-ci.org/arokor/tellstick.svg?branch=master)](https://travis-ci.org/arokor/tellstick)
+
 A simple node wrapper for the Telldus Tellstick tdtool command line interface.
 
 Follow [AronKornhall](http://twitter.com/AronKornhall) for news and updates regarding this library.
