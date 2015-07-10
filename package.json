@@ -8,6 +8,10 @@
   ],
   "version": "0.0.1",
   "main": "lib/telldus.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arokor/tellstick.git"
+  },
   "engines": {
     "node": ">=0.6.10"
   },
@@ -19,6 +23,6 @@
     "should": "~1.2.2"
   },
   "scripts": {
-    "test": "mocha --reporter spec --bail"
+    "test": "./node_modules/mocha/bin/mocha --reporter spec"
   }
 }
