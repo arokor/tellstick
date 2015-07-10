@@ -9,12 +9,12 @@ describe('Basic tdtool commands', function() {
       should.not.exist(err);
       should.exist(list);
       list.should.have.property('length', 4);
-      list[0][0].should.equal('1');
-      list[0][1].should.equal('switch1');
-      list[0][2].should.equal('ON');
-      list[3][0].should.equal('4');
-      list[3][1].should.equal('switch4');
-      list[3][2].should.equal('OFF');
+      list[0].id.should.equal('1');
+      list[0].name.should.equal('switch1');
+      list[0].onOff.should.equal('ON');
+      list[3].id.should.equal('4');
+      list[3].name.should.equal('switch4');
+      list[3].onOff.should.equal('OFF');
       done();
     });
   });
