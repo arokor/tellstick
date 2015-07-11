@@ -1,10 +1,31 @@
 var mocha = require('mocha');
 var should = require('should');
+var sinon = require('sinon');
+var child = require('child_process');
 var telldus = require('../lib/telldus');
 
 describe('Basic tdtool commands', function() {
+  var sb;
+  beforeEach(function(){
+    sb = sinon.sandbox.create();
+  });
+
+  afterEach(function(){
+    sb.restore();
+  });
+
   it('list', function(done) {
-    var td = telldus('./test/fixtures/list/');
+    var listResult = [
+      '"Number of devices: 4"',
+      '"1 switch1 ON"',
+      '"2 switch2 ON"',
+      '"3 switch3 OFF"',
+      '"4 switch4 OFF"'
+    ].join('\n');
+
+    sb.stub(child, 'exec').yields(null, listResult, '');
+
+    var td = telldus();
     td.list(function(err, list){
       should.not.exist(err);
       should.exist(list);
@@ -20,7 +41,8 @@ describe('Basic tdtool commands', function() {
   });
 
   it('turnOn', function(done) {
-    var td = telldus('./test/fixtures/on/');
+    sb.stub(child, 'exec').yields(null, '"Turning on device 1, on - Success"', '');
+    var td = telldus();
     td.turnOn(1, function(err){
       should.not.exist(err);
       done();
@@ -28,7 +50,8 @@ describe('Basic tdtool commands', function() {
   });
 
   it('turnOff', function(done) {
-    var td = telldus('./test/fixtures/off/');
+    sb.stub(child, 'exec').yields(null, '"Turning off device 1, off - Success"', '');
+    var td = telldus();
     td.turnOff(1, function(err){
       should.not.exist(err);
       done();

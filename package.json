@@ -20,7 +20,8 @@
   },
   "devDependencies": {
     "mocha": "~1.12.0",
-    "should": "~1.2.2"
+    "should": "~1.2.2",
+    "sinon": "^1.15.4"
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --reporter spec"
