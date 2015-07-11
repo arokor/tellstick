@@ -9,7 +9,8 @@ Follow [AronKornhall](http://twitter.com/AronKornhall) for news and updates rega
 ##Installation
 1. Install telldus-core as described [here](http://developer.telldus.com/wiki/TellStickInstallationSource)
 2. Setup your switches using tdtool
-3. npm install tellstick
+3. make sure tdtool installation directory is in the path.
+4. npm install tellstick
 
 ##Example
     var tellstick = require('tellstick');
